@@ -1,0 +1,585 @@
+$acolor: #00df5f
+$accent: #1f3a93
+$dark-black: #050505
+$light-black: #282828
+
+
+@font-face
+	font-family: Oswald-Light
+	src: url(../fonts/Oswald/Oswald-Light.ttf)
+@font-face
+	font-family: Oswald-Regular
+	src: url(../fonts/Oswald/Oswald-Regular.ttf)
+@font-face
+	font-family: Oswald-Bold
+	src: url(../fonts/Oswald/Oswald-Bold.ttf)
+@font-face
+	font-family: Museo300
+	src: url(../fonts/Museo/Museosanscyrl300.ttf)
+@font-face
+	font-family: Museo500
+	src: url(../fonts/Museo/Museosanscyrl500.ttf)
+@font-face
+	font-family: Robo-Bold
+	src: url(../fonts/Roboto/RobotoCondensed-Bold.ttf)
+
+
+ 
+@mixin big
+	@media (min-width: 1201px)
+		@content
+ 
+@mixin large
+    @media (min-width: 992px) and (max-width: 1200px)
+    	@content
+       
+@mixin medium
+	@media (min-width: 768px) and (max-width: 991px)
+	    @content
+           
+@mixin small
+    @media (min-width: 500px) and (max-width: 767px)
+    	@content
+
+@mixin micro
+    @media (min-width: 250px) and (max-width: 499px)
+        @content
+@mixin vertical420
+	@media (max-height: 490px) and (min-width: 767px)
+        @content
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+	
+
+body
+	font-size: 16px
+	min-width: 320px
+	min-height: 420px
+	position: relative
+	line-height: 1.75
+	font-family: Oswald-Regular
+	overflow-x: hidden
+	opacity: 1
+	color: #616161
+	background: #fff
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.active-mob
+	top: 0!important
+// .active
+// 	top: 0!important
+
+
+.wrapper
+	width: 100vw
+	
+	.layout
+		
+		video
+			position: fixed
+			top: 50%
+			left: 50%
+			min-width: 100%
+			min-height: 100%
+			width: auto
+			height: auto
+			z-index: -100
+			transform: translateX(-50%) translateY(-50%)
+			background-size: cover
+			transition: 1s opacity
+	.header
+		
+		&__left
+			width: 100px
+			background: rgba(255,255,255,0.9)
+			height: 100vh
+			position: relative
+			z-index: 1000
+			@include micro
+				height: 50px
+				width: 100%
+			@include vertical420
+				height: 420px
+		.nav-mobile
+			position: relative
+			right: 0px
+			top: -12px
+			bottom: 0
+			height: 50px
+			background-color: transparent
+			width: 80px
+			cursor: pointer
+			transition: all linear .5s
+			margin-right: 0
+			display: inline-block
+			cursor: pointer
+			float: right
+			z-index: 1001
+			margin-bottom: 0
+			@include small
+				display: none
+			
+			&.active			
+				.nav-mobile__line--top
+					top: 50%
+					transform: rotate(45deg)
+				.nav-mobile__line--middle
+					opacity: 0
+				.nav-mobile__line--bottom
+					top: 50%
+					transform: rotate(-45deg)
+			&__line	
+				position: absolute
+				right: 30%
+				display: block
+				width: 30px
+				height: 5px	
+				background-color: $light-black
+				&--top
+					top: 25px
+					transition: all linear .5s
+				&--middle
+					top: 35px
+					opacity: 1
+					transition: all linear .5s
+				&--bottom
+					top: 45px
+					transition: all linear .5s	
+		&__menu
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-left: -14px
+			margin-top: 160px
+			padding: 0
+			width: auto
+			height: 22px
+			white-space: nowrap
+			transform: rotate(270deg)
+			transform-origin: 0% 0%
+			list-style-type: none
+			@include micro
+				transform: rotate(0deg)
+				width: 100%
+				top: 0
+				left: 0
+				background: rgba(255,255,255,0.7)
+				height: 100vh
+				margin-top: 0
+				margin-left: 0
+				margin-bottom: 0
+				// padding-top: 160px
+				top: -5500px
+				transition: 0.5s all
+				display: flex
+				flex-direction: column-reverse
+				justify-content: center
+			@include vertical420
+				top: 50%
+
+			
+			
+			
+			li
+				margin: 0 20px
+				display: inline-block
+				@include micro
+					display: block
+					height: 80px
+					text-align: center
+				@include vertical420
+					margin: 0 10px
+				a
+					color: #333
+					text-decoration: none
+					@include micro
+						font-size: 26px
+					@include vertical420
+						font-size: 14px
+					
+					&:hover
+						color: #77e
+		#center-title
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%,-50%)
+			font-size: 50px
+			color: rgba(255,255,255,0.4)
+			font-family: Museo300
+			@include medium
+				font-size: 40px
+			@include small
+				font-size: 26px
+	.main
+		.story
+			background: url("../img/9MNhLtAgKAw.jpg")
+			background-size: cover!important
+			width: 100%
+			height: 100%
+			position: absolute
+			top: 0
+			left: -5500px
+			z-index: 10
+			transition: all 1s 
+			overflow: hidden
+			z-index: 100
+			
+			
+				
+			&__content
+				margin: 0
+				padding: 0px
+				width: 50%
+				height: 100%
+				padding-left: 100px
+				background: #fff
+				z-index: 10
+				transition: all 1.5s
+				@include small
+					width: 100%
+				@include micro
+					width: 100%
+					padding-left: 10px
+				
+				
+			&__box
+				height: 100%
+				width: 100%
+				background: #ffffff
+				z-index: 10
+				box-shadow: 1px 1px 15px #777
+				@include micro
+					box-shadow: none
+				
+				&-inner
+					width: 100%
+					height: 100%
+					
+					// padding-right: 15px
+					position: relative
+					
+
+				&-close
+					position: absolute
+					right: -50px
+					height: 50px
+					width: 50px
+					background: #eee
+					top: 20px
+					display: flex
+					justify-content: center
+					align-items: center
+					font-size: 26px
+					cursor: pointer
+					
+				
+				&-left
+					padding: 40px
+					@include medium
+						padding: 10px
+					@include small
+						padding: 10px
+					@include micro
+						padding-bottom: 0
+				&-right
+					padding: 40px 10px 0 0
+					font-size: 14px
+					font-family: Museo300
+					overflow-y: auto
+					transition: opacity 1s
+					height: 100%
+					@include medium
+						padding-top: 0px
+						font-size: 12px
+					@include small
+						padding-top: 20px
+		.portfolio
+			width: 100%
+			height: 100%
+			position: absolute
+			top: 0
+			left: -5500px
+			z-index: 10
+			transition: all 1s 
+			overflow: hidden
+			z-index: 100
+			background: #777
+			&__content
+				width: 100%
+				height: 100%
+				background: rgba(33,33,33,0.9)
+				padding-left: 100px
+				overflow-y: scroll
+				padding-top: 20px
+				@include micro
+					padding-left: 0px
+				.grids
+					height: 50px
+					@include medium
+						display: flex
+						justify-content: center
+					@include small
+						display: none
+					
+				
+					span
+						cursor: pointer
+						margin: 0 15px
+					#twoGrid
+						float: right
+						@include small
+							display: none
+						@include micro
+							display: none
+					#threeGrid
+						float: right
+						@include small
+							display: none
+						@include micro
+							display: none
+					
+			&__box
+			
+				&-item
+					margin-bottom: 10px
+					margin-top: 10px
+					
+						
+					
+					a
+						
+						img
+							width: 100%
+							transition: .5s all
+						.twice
+							height: 300px
+							@include medium
+								height: 200px
+							@include small
+								display: none
+						&:hover span
+							opacity: 1
+						&:hover img
+							transform: scale(1.02)
+						span
+							transition: all 1s
+							position: absolute
+							top: 50%
+							left: 50%
+							color: white
+							transform: translate(-50%,-50%)
+							font-size: 30px
+							background: rgba(33,33,33,0.9)
+							padding: 10px 20px
+							line-height: 1
+							opacity: 0
+			
+		.contacts
+			background-size: cover!important
+			width: 100%
+			height: 100%
+			position: absolute
+			top: 0
+			left: -5500px
+			z-index: 10
+			transition: all 1s 
+			overflow: hidden
+			z-index: 3	
+			&__content
+				margin: 0
+				padding: 0px
+				width: 50%
+				height: 100%
+				padding-left: 100px
+				background: #fff
+				z-index: 10
+				transition: all 1.5s
+				@include small
+					width: 100%
+				@include micro
+					width: 100%
+					padding-left: 10px
+				
+				
+				
+			&__box
+				height: 100%
+				width: 100%
+				background: #ffffff
+				z-index: 10
+				box-shadow: 1px 1px 15px #777
+				
+				@include micro
+					box-shadow: none
+				
+				&-inner
+					width: 100%
+					height: 100%
+					
+					// padding-right: 15px
+					position: relative
+				&-left
+					padding: 40px
+					@include medium
+						padding: 10px
+					@include small
+						padding: 10px
+					@include micro
+						padding-bottom: 0px
+				&-right
+					padding: 40px 10px 0 0
+					font-size: 14px
+					font-family: Museo300
+					overflow-y: auto
+					transition: opacity 1s
+					height: 100%
+					@include medium
+						padding-top: 0px
+						font-size: 12px
+					@include small
+						padding-top: 20px
+
+
+					form
+						.form-group
+							margin-bottom: 0px
+							label
+								margin-bottom: 0px
+						button
+							margin-top: 10px
+							margin-bottom: 10px
+
+	.footer
+		
+
+		color: #ccc
+		&__social-text
+			position: absolute
+			width: 150px
+			right: 0px
+			bottom: 50px
+			z-index: 7
+			display: none
+			@include large
+				right: 0px
+			@include medium
+				right: 160px
+			@include small
+				display: none
+			@include micro
+				display: none
+
+				
+			a
+				color: #fff
+		&__social-list
+			list-style-type: none
+			position: absolute
+			bottom: 50px
+			font-size: 30px
+			right: 0
+			transform: translateX(-50%)
+			padding: 0
+			display: flex
+			justify-content: center
+			flex-direction: column
+			@include micro
+				list-style-type: none
+				position: absolute
+				bottom: 0
+				width: 250px
+				left: 50%
+				transform: translateX(-50%)
+				padding: 0
+				display: flex
+				justify-content: center	
+				flex-direction: row
+				font-size: 18px
+			li
+				
+				margin: 0 15px
+				a
+					color: #fff
+		&__year
+
+			position: absolute
+			right: 30px
+			bottom: 10px
+			@include medium
+				right: 30px
+			@include small
+				right: 30px	
+			@include micro
+				right: 10px		
+					
+					
+					
+
+::-webkit-scrollbar-button
+	background-image: url('')
+	background-repeat: no-repeat 
+	width: 6px
+	height: 0px 
+	
+
+::-webkit-scrollbar-track 
+	background-color: #32312e 
+	box-shadow: 0px 0px 3px #000 inset 
+
+
+::-webkit-scrollbar-thumb
+	-webkit-border-radius: 5px 
+	border-radius: 5px 
+	background-color: #ffefb9 
+	box-shadow: 0px 1px 1px #fff inset 
+	background-image: url('https://yraaa.ru/_pu/24/59610063.png')
+	background-position: center 
+	background-repeat: no-repeat
+
+::-webkit-resizer
+	background-image: url('') 
+	background-repeat: no-repeat 
+	width: 7px
+	height: 0px 
+
+
+::-webkit-scrollbar 
+	width: 11px
