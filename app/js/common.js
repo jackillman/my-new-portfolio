@@ -110,10 +110,10 @@ portfolioAnch.addEventListener("click", function(){
 
 // картинки на бг - слайдер в моей истории
 var imgItem = [
-    'img/9MNhLtAgKAw.jpg',
-    'img/P1070050.jpg',
-    'img/P1050911.jpg',
-    'img/P1070050.jpg',
+    'img/2-front-end.jpg',
+    'img/2-front-end1.jpg',
+    'img/5-front-end.jpg',
+    'img/7-front-end.jpg',
 ], i=1;
 
 // слайдер в моей истории

@@ -135,6 +135,7 @@ body
 			@include micro
 				height: 50px
 				width: 100%
+				background: #fff
 			@include vertical420
 				height: 420px
 		.nav-mobile
@@ -250,7 +251,7 @@ body
 				font-size: 26px
 	.main
 		.story
-			background: url("../img/9MNhLtAgKAw.jpg")
+			background: url("../img/7-front-end.jpg")
 			background-size: cover!important
 			width: 100%
 			height: 100%
@@ -295,6 +296,8 @@ body
 					
 					// padding-right: 15px
 					position: relative
+					@include micro
+						overflow: auto
 					
 
 				&-close
@@ -309,6 +312,10 @@ body
 					align-items: center
 					font-size: 26px
 					cursor: pointer
+					@include micro
+						display: none
+					@include small
+						display: none
 					
 				
 				&-left
@@ -331,6 +338,8 @@ body
 						font-size: 12px
 					@include small
 						padding-top: 20px
+					@include micro
+						overflow: hidden
 		.portfolio
 			width: 100%
 			height: 100%
@@ -456,6 +465,7 @@ body
 					
 					// padding-right: 15px
 					position: relative
+					overflow: auto
 				&-left
 					padding: 40px
 					@include medium
@@ -468,7 +478,7 @@ body
 					padding: 40px 10px 0 0
 					font-size: 14px
 					font-family: Museo300
-					overflow-y: auto
+					
 					transition: opacity 1s
 					height: 100%
 					@include medium
@@ -479,6 +489,8 @@ body
 
 
 					form
+						@include micro
+							height: auto
 						.form-group
 							margin-bottom: 0px
 							label
