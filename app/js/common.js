@@ -120,17 +120,17 @@ var imgItem = [
 function carouselStart(){
 
 if(i > (imgItem.length-1)){
-    $('.story').animate({'opacity':'0'},20,function(){
+    $('.story__wrap').animate({'opacity':'0'},200,function(){
         i=1;
-        $('.story').css({'background':'url('+imgItem[0]+')'});
+        $('.story__wrap').css({'background':'url('+imgItem[0]+')'});
     });
-    $('.story').animate({'opacity':'1'},20);
+    $('.story__wrap').animate({'opacity':'1'},200);
 }else{
-    $('.story').animate({'opacity':'0'},20,function(){
-        $('.story').css({'background':'url('+imgItem[i]+')'});
+    $('.story__wrap').animate({'opacity':'0'},200,function(){
+        $('.story__wrap').css({'background':'url('+imgItem[i]+')'});
         i++;
     });
-    $('.story').animate({'opacity':'1'},20);
+    $('.story__wrap').animate({'opacity':'1'},200);
 }
 
 }
