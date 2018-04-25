@@ -402,6 +402,14 @@ body
 						img
 							width: 100%
 							transition: .5s all
+							@include large
+								height: 170px
+							@include medium
+								height: 130px
+							@include small
+								height: 240px
+							@include micro
+								height: 170px
 						.twice
 							height: 300px
 							@include medium
