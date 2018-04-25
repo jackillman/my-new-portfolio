@@ -61,7 +61,8 @@ addEvent(window, "resize", function(event) {
 
 
 // нажатие на мою историю
-storyAnch.addEventListener("click", function(){
+storyAnch.addEventListener("click", function(e){
+     e.preventDefault();
     myStopFunction();
     intervalCarousel = setInterval(carouselStart,5000);
     portfolioContent.style.left = "-5500px"
@@ -82,7 +83,8 @@ storyClose.addEventListener("click", function(){
     storyContentRight.style.opacity = ( condition1) ? "0" : "1";
 },false);
 // нажатие на портфолио
-portfolioAnch.addEventListener("click", function(){
+portfolioAnch.addEventListener("click", function(e){
+     e.preventDefault();
     myStopFunction();
     storyBlock.style.left = "-5500px";
     contactsBlock.style.left = "-5500px";
